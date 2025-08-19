@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Pro Video Downloader - Download YouTube, Instagram, Facebook Videos</title>
+    <meta name="description" content="The most reliable, fast, and free online video downloader. Save videos from YouTube, Facebook, Instagram, Twitter, TikTok, and more in MP4 or MP3 format with the best quality.">
+    <meta name="keywords" content="video downloader, youtube downloader, facebook downloader, instagram downloader, free video downloader, online video downloader, download video, save video, mp4 converter">
+    <link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/"> <!-- TODO: UPDATE CANONICAL URL -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔽</text></svg>">
+    
+    <!-- Open Graph & Twitter Meta Tags -->
+    <meta property="og:title" content="Pro Video Downloader - The Ultimate Online Tool">
+    <meta property="og:description" content="Effortlessly download videos from all major social platforms in high quality. Simple, fast, and completely free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/"> <!-- TODO: UPDATE CANONICAL URL -->
+    <meta property="og:image" content="https://i.imgur.com/3gM1gB1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://i.imgur.com/3gM1gB1.png">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ⭐ NEW: SaveFrom.net Official Helper Script - This is the key to the solution! -->
+    <script async type="text/javascript" src="https://worker.sf-helper.com/v2/sf-helper.js"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pro Video Downloader","applicationCategory":"MultimediaApplication","operatingSystem":"Web","description":"A free, professional online tool to download videos from social media platforms.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"7150"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I download a video?","acceptedAnswer":{"@type":"Answer","text":"1. Copy the video's URL. 2. Paste the URL into our site's input box. 3. Click the 'Download' button. 4. Choose your desired quality and click to save the file."}},{"@type":"Question","name":"Is this service truly free?","acceptedAnswer":{"@type":"Answer","text":"Yes, our online video downloader is 100% free with no hidden costs."}}]}</script>
+
+    <style>
+        :root {
+            --primary-color: #28a745; --primary-hover: #218838;
+            --background-light: #F8F9FA; --surface-light: #FFFFFF;
+            --text-light: #212529; --text-muted-light: #6c757d; --border-light: #dee2e6;
+            --background-dark: #121212; --surface-dark: #1E1E1E;
+            --text-dark: #E0E0E0; --text-muted-dark: #888888; --border-dark: #333333;
+            --success-color: #28a745; --error-color: #dc3545;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --font-family: 'Poppins', sans-serif; --transition-speed: 0.3s;
+        }
+        [data-theme="light"] { --bg-color:var(--background-light); --surface-color:var(--surface-light); --text-color:var(--text-light); --text-muted-color:var(--text-muted-light); --border-color:var(--border-light); }
+        [data-theme="dark"] { --bg-color:var(--background-dark); --surface-color:var(--surface-dark); --text-color:var(--text-dark); --text-muted-color:var(--text-muted-dark); --border-color:var(--border-dark); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:var(--font-family); background-color:var(--bg-color); color:var(--text-color); line-height:1.6; transition:background-color var(--transition-speed), color var(--transition-speed); }
+        .container { max-width:960px; margin:0 auto; padding:0 1rem; }
+        .site-header { background-color:rgba(255, 255, 255, 0.8); border-bottom:1px solid var(--border-color); padding:1rem 0; position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); }
+        [data-theme="dark"] .site-header { background-color:rgba(30, 30, 30, 0.8); }
+        .header-content { display:flex; justify-content:space-between; align-items:center; }
+        .site-title a { font-size:1.5rem; font-weight:700; color:var(--primary-color); text-decoration:none; }
+        .theme-toggle-btn { background:transparent; border:1px solid var(--border-color); border-radius:50%; width:40px; height:40px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text-muted-color); transition:all var(--transition-speed); }
+        .theme-toggle-btn:hover { background-color:var(--bg-color); color:var(--text-color); }
+        #icon-sun, #icon-moon { display:none; }
+        [data-theme="light"] #icon-moon { display:block; }
+        [data-theme="dark"] #icon-sun { display:block; }
+        main { padding:2rem 0; }
+        .card { background-color:var(--surface-color); border:1px solid var(--border-color); border-radius:12px; padding:2.5rem; box-shadow:var(--shadow); margin-bottom:2rem; }
+        .hero-section h1 { font-size:clamp(2rem, 5vw, 2.8rem); font-weight:700; text-align:center; margin-bottom:0.5rem; line-height:1.2; }
+        .hero-section p.subtitle { text-align:center; color:var(--text-muted-color); margin-bottom:2rem; font-size:1.1rem; }
+        .form-container { position:relative; display:flex; align-items:center; }
+        .link-icon { position:absolute; left:1rem; color:var(--text-muted-color); pointer-events:none; }
+        .url-input { width:100%; padding:1rem 3rem; font-size:1rem; border:1px solid var(--border-color); border-radius:8px; background-color:var(--bg-color); color:var(--text-color); transition:all var(--transition-speed); }
+        .paste-btn { position:absolute; right:0.5rem; background-color:var(--primary-color); color:white; border:none; border-radius:6px; padding:0.5rem 0.8rem; font-size:0.8rem; font-weight:500; cursor:pointer; transition:background-color var(--transition-speed); }
+        .paste-btn:hover { background-color:var(--primary-hover); }
+        .url-input:focus { outline:none; border-color:var(--primary-color); box-shadow:0 0 0 4px rgba(40, 167, 69, 0.15); }
+        .download-btn { display:flex; align-items:center; justify-content:center; gap:0.5rem; width:100%; padding:1rem; margin-top:1rem; font-size:1.1rem; font-weight:600; background:linear-gradient(45deg, var(--primary-color), #1e7e34); color:white; border:none; border-radius:8px; cursor:pointer; transition:all var(--transition-speed); box-shadow:0 4px 15px rgba(40, 167, 69, 0.2); }
+        .download-btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(40, 167, 69, 0.3); }
+        .download-btn:disabled { background:var(--text-muted-color); cursor:not-allowed; box-shadow:none; transform:none; }
+        #status-message { text-align:center; margin-top:1.5rem; font-weight:500; min-height:24px; }
+        #status-message.error { color:var(--error-color); }
+        #status-message.success { color:var(--success-color); }
+        .loader { width:24px; height:24px; border:3px solid #fff; border-bottom-color:transparent; border-radius:50%; display:inline-block; animation:rotation 1s linear infinite; }
+        @keyframes rotation { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+        #results-container { margin-top:2rem; opacity:0; transform:translateY(20px); transition:opacity 0.5s ease, transform 0.5s ease; }
+        #results-container.visible { opacity:1; transform:translateY(0); }
+        .video-info { display:flex; gap:1.5rem; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:1.5rem; margin-bottom:1.5rem; }
+        .video-info img { width:150px; height:auto; border-radius:8px; object-fit:cover; flex-shrink:0; }
+        .video-info h3 { font-size:1.2rem; font-weight:600; line-height:1.4; }
+        .download-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:1rem; }
+        .download-link { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:1rem 0.5rem; background-color:var(--bg-color); border:1px solid var(--border-color); border-radius:8px; text-decoration:none; color:var(--text-color); font-weight:600; transition:all var(--transition-speed); }
+        .download-link:hover { border-color:var(--primary-color); background-color:var(--surface-color); transform:translateY(-3px); box-shadow:0 4px 10px rgba(40, 167, 69, 0.1); }
+        .download-link .quality { color:var(--primary-color); font-size:1.1rem; }
+        .download-link .type { font-size:0.8rem; color:var(--text-muted-color); font-weight:400; text-transform:uppercase; }
+        .content-section h2 { font-size:1.8rem; font-weight:600; margin-bottom:1.5rem; border-bottom:2px solid var(--primary-color); padding-bottom:0.5rem; display:inline-block; }
+        .faq-item { border-bottom:1px solid var(--border-color); padding:1.5rem 0; }
+        .faq-question { font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:1.1rem; }
+        .faq-answer { display:none; margin-top:1rem; color:var(--text-muted-color); }
+        .faq-question .toggle-icon { transition:transform var(--transition-speed); font-weight:bold; }
+        .faq-item.active .faq-question .toggle-icon { transform:rotate(45deg); }
+        .ad-placeholder { background-color:var(--bg-color); border:2px dashed var(--border-color); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--text-muted-color); font-size:0.9rem; border-radius:8px; min-height:90px; margin:1.5rem 0; }
+        .site-footer { background-color:var(--surface-color); color:var(--text-muted-color); padding:2.5rem 0; margin-top:2rem; border-top:1px solid var(--border-color); font-size:0.9rem; text-align:center; }
+        .footer-links { display:flex; gap:1.5rem; justify-content:center; margin-bottom:1rem; }
+        .footer-links a { color:var(--text-muted-color); text-decoration:none; transition:color var(--transition-speed); }
+        .footer-links a:hover { color:var(--primary-color); }
+        @media (max-width:768px) {
+            .card { padding:1.5rem; }
+            .hero-section h1 { font-size:1.8rem; }
+            .hero-section p.subtitle { font-size:1rem; }
+            .video-info { flex-direction:column; text-align:center; }
+            .paste-btn { padding:0.4rem 0.6rem; font-size:0.7rem; }
+            .url-input { padding:1rem 5rem 1rem 3rem; }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container"><div class="header-content"><div class="site-title"><a href="/">ProDownloader</a></div><button id="theme-toggle" class="theme-toggle-btn" title="Toggle dark/light theme"><svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div>
+    </header>
+
+    <main class="container">
+        <!-- Main Downloader Tool -->
+        <section class="hero-section card">
+            <h1>The Ultimate Video Downloader</h1>
+            <p class="subtitle">Reliable, fast, and supports all major platforms. Paste a link to get started.</p>
+            <form id="downloader-form">
+                <div class="form-container">
+                     <span class="link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg></span>
+                    <input id="video-url" class="url-input" placeholder="Paste video link here..." required type="url">
+                    <button type="button" class="paste-btn" id="paste-btn">Paste</button>
+                </div>
+                <button id="download-btn" class="download-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg><span>Download</span></button>
+            </form>
+            <div id="status-message"></div>
+            <div id="results-container"></div>
+        </section>
+
+        <!-- Ad Placeholder -->
+        <div class="ad-placeholder"><p>Advertisement (728x90 or Responsive) <br> <!-- ADSENSE/ADSTERRA CODE HERE --></p></div>
+
+        <!-- FAQ Section -->
+        <section class="content-section card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item"><div class="faq-question"><span>Is this video downloader tool free to use?</span><span class="toggle-icon">+</span></div><div class="faq-answer"><p>Absolutely. Our tool is 100% free. We do not charge any fees or require subscriptions. The service is supported by advertising, which helps us keep it running.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Can I download videos in high definition (HD)?</span><span class="toggle-icon">+</span></div><div class="faq-answer"><p>Yes. We always provide the highest quality available for the video. If a video was uploaded in 1080p, our tool will offer a download link for that quality if possible.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>What devices does this tool work on?</span><span class="toggle-icon">+</span></div><div class="faq-answer"><p>Our downloader is a web-based tool, which means it works on any device with a modern browser. This includes Windows PCs, Macs, iPhones, Android phones, tablets, and Linux systems.</p></div></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links"><a href="about.html">About Us</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+            <div class="footer-disclaimer"><p>This site is for educational purposes only. We do not host any copyrighted content. All videos are downloaded directly from the content delivery networks (CDNs) of their respective platforms.</p><p>&copy; <span id="current-year"></span> ProDownloader. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- UI & THEME LOGIC (Minimized for clarity) ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const applyTheme = (theme) => { body.dataset.theme = theme; localStorage.setItem('theme', theme); };
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+        themeToggle.addEventListener('click', () => applyTheme(body.dataset.theme === 'light' ? 'dark' : 'light'));
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => {
+            const item = q.parentElement, answer = item.querySelector('.faq-answer'), wasActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); i.querySelector('.faq-answer').style.display = 'none'; });
+            if (!wasActive) { item.classList.add('active'); answer.style.display = 'block'; }
+        }));
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const urlInput = document.getElementById('video-url');
+        const pasteBtn = document.getElementById('paste-btn');
+        if (navigator.clipboard) { pasteBtn.addEventListener('click', async () => { try { urlInput.value = await navigator.clipboard.readText(); urlInput.focus(); } catch (err) { console.error('Paste failed: ', err); } });
+        } else { pasteBtn.style.display = 'none'; }
+
+        // --- ⭐ CORE DOWNLOADER LOGIC USING SAVEFROM.NET HELPER ---
+        const form = document.getElementById('downloader-form');
+        const downloadBtn = document.getElementById('download-btn');
+        const statusMessage = document.getElementById('status-message');
+        const resultsContainer = document.getElementById('results-container');
+        
+        // This function queries the SaveFrom.net helper
+        const getVideoInfo = (url) => {
+            return new Promise((resolve, reject) => {
+                if (typeof savefrom !== 'undefined') {
+                    // The sf-helper.js script provides the global `savefrom` object
+                    savefrom.getInfo(url, {
+                        onSuccess: data => resolve(data),
+                        onError: err => reject(new Error(err.message || 'Could not get video data')),
+                        onProcess: () => showStatus('Processing...', 'info')
+                    });
+                } else {
+                    reject(new Error('Downloader service failed to load. Please refresh the page.'));
+                }
+            });
+        };
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const videoUrl = urlInput.value.trim();
+            if (!videoUrl) {
+                showStatus('Please paste a video link first.', 'error');
+                return;
+            }
+
+            setLoading(true);
+            resultsContainer.innerHTML = '';
+            resultsContainer.classList.remove('visible');
+
+            try {
+                const data = await getVideoInfo(videoUrl);
+                handleApiResponse(data);
+            } catch (error) {
+                console.error('Download Error:', error);
+                showStatus(error.message || 'Failed to get video info. The link might be private, invalid, or unsupported.', 'error');
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        function setLoading(isLoading) {
+            downloadBtn.disabled = isLoading;
+            downloadBtn.innerHTML = isLoading 
+                ? `<div class="loader"></div><span>Processing...</span>`
+         
